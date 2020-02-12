@@ -1,6 +1,6 @@
 package com.freenow.datatransferobject;
 
-import com.freenow.domainobject.EngineType;
+import com.freenow.domainvalue.EngineType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

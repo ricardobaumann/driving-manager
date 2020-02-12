@@ -2,8 +2,8 @@ package com.freenow.controller;
 
 import com.freenow.controller.mapper.CarMapper;
 import com.freenow.domainobject.CarDO;
-import com.freenow.domainobject.EngineType;
-import com.freenow.service.driver.CarService;
+import com.freenow.domainvalue.EngineType;
+import com.freenow.service.car.CarService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;

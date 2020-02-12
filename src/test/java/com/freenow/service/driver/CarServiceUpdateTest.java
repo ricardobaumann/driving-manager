@@ -2,8 +2,9 @@ package com.freenow.service.driver;
 
 import com.freenow.dataaccessobject.CarRepository;
 import com.freenow.domainobject.CarDO;
-import com.freenow.domainobject.EngineType;
+import com.freenow.domainvalue.EngineType;
 import com.freenow.exception.EntityNotFoundException;
+import com.freenow.service.car.CarService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

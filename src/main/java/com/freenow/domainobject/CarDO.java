@@ -1,16 +1,21 @@
 package com.freenow.domainobject;
 
+import com.freenow.domainvalue.EngineType;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 @EqualsAndHashCode(of = {"id"})
 @Table(name = "car",
         uniqueConstraints = @UniqueConstraint(name = "uc_car_license_plate", columnNames = {"licensePlate"}))
@@ -40,6 +45,9 @@ public class CarDO {
     @NotNull
     private String manufacturer;
 
-    @NotNull
-    private ZonedDateTime updatedAt;
+    @CreatedDate
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 }

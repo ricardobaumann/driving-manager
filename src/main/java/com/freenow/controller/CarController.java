@@ -4,7 +4,7 @@ import com.freenow.controller.mapper.CarMapper;
 import com.freenow.datatransferobject.CarDTO;
 import com.freenow.domainobject.CarDO;
 import com.freenow.exception.EntityNotFoundException;
-import com.freenow.service.driver.CarService;
+import com.freenow.service.car.CarService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

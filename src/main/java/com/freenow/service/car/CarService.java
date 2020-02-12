@@ -1,4 +1,4 @@
-package com.freenow.service.driver;
+package com.freenow.service.car;
 
 import com.freenow.dataaccessobject.CarRepository;
 import com.freenow.domainobject.CarDO;
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
-import java.time.ZonedDateTime;
 import java.util.Optional;
 
 @Service
@@ -21,7 +20,6 @@ public class CarService {
     }
 
     public CarDO save(@Valid CarDO carDO) {
-        carDO.setUpdatedAt(ZonedDateTime.now());
         return carRepository.save(carDO);
     }
 
