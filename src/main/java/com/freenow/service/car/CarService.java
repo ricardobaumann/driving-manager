@@ -2,7 +2,9 @@ package com.freenow.service.car;
 
 import com.freenow.dataaccessobject.CarRepository;
 import com.freenow.domainobject.CarDO;
+import com.freenow.exception.DuplicateLicensePlateException;
 import com.freenow.exception.EntityNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -20,7 +22,12 @@ public class CarService {
     }
 
     public CarDO save(@Valid CarDO carDO) {
-        return carRepository.save(carDO);
+        try {
+            return carRepository.save(carDO);
+        } catch (DataIntegrityViolationException e) {
+            //could be upgraded to handle different types of violations
+            throw new DuplicateLicensePlateException(carDO.getLicensePlate());
+        }
     }
 
     public Optional<CarDO> getById(Long id) {
